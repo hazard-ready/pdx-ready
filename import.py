@@ -27,7 +27,7 @@ def main():
   loadMappings = ""
   loadPaths = ""
   loadImports = ""
-  loadGroups = "    from .models import ShapefileGroup\n"
+  loadGroups = "    from disasterinfosite.models import ShapefileGroup\n"
   viewsSnuggetMatches = ""
   templateMomentSnuggets = ""
 
@@ -77,7 +77,7 @@ def main():
       modelsSnuggetRatings += "                '" + stem + "_rating': " + stem + "_rating,\n"
 
       loadImports += "    print('Loading data for " + stem + "')\n"
-      loadImports += "    from .models import " + stem + "\n"
+      loadImports += "    from disasterinfosite.models import " + stem + "\n"
       if shapefileFound:
         loadImports += "    lm_" + stem + " = LayerMapping(" + stem + ", " + stem + "_shp, " + stem + "_mapping, transform=True, " + "encoding='" + encoding + "', unique=['" + keyField.lower() + "'])\n"
         loadImports += "    lm_" + stem + ".save()\n\n"
@@ -85,10 +85,10 @@ def main():
         loadMappings += "    '" + keyField.lower() + "': '" + keyField + "',\n"
         loadMappings += "    'geom': '" + shapeType.upper() + "'\n"
         loadMappings += "}\n\n"
-        loadPaths += stem + "_shp = " + "os.path.abspath(os.path.join(os.path.dirname(__file__)," + " '../" + simplified + "'))\n"
+        loadPaths += stem + "_shp = " + "os.path.abspath(os.path.join(os.path.dirname(BASE_DIR)," + " '../" + simplified + "'))\n"
       elif rasterFound:
         loadImports += "    tileLoadRaster(" + stem + ", " + stem + "_tif)\n\n"
-        loadPaths += stem + "_tif = " + "os.path.abspath(os.path.join(os.path.dirname(__file__)," + " '../" + reprojected + "'))\n"
+        loadPaths += stem + "_tif = " + "os.path.abspath(os.path.join(os.path.dirname(BASE_DIR)," + " '../" + reprojected + "'))\n"
 
       print("")
       first = False
