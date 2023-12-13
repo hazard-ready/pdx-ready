@@ -44,10 +44,18 @@ RUN pip install --no-cache-dir -r requirements.txt
 # verify pip install
 RUN pip list
 
-# build front-end code
+# unzip data
 WORKDIR /app/disasterinfosite
+RUN rm -rf data && unzip -o data.zip
+
+# build front-end code
 RUN mkdir -p media
+RUN npm rebuild node-sass
 RUN npm install && npm run webpack
+
+# build translated files
+RUN python ../manage.py makemessages -a
+RUN python ../manage.py compilemessages
 
 WORKDIR /app
 
