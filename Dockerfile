@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gdal-bin          \
     libjpeg-dev       \
     g++               \
+    gettext           \
     libgdal-dev       \
     nodejs            \
     npm               \
