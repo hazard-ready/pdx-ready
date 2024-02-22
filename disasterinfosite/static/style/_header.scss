@@ -106,29 +106,41 @@ header {
     margin: 14px 30px 14px auto;
     max-width: 600px;
   }
+  .location-text__container {
+    flex: 1 1 auto;
+    position: relative;
+  }
 }
 
-#location-text,
-.mq-input {
+.geoapify-autocomplete-input {
   border: none;
-  flex: 1 1 auto;
-  height: 40px;
-  margin: 2px 2px 2px 8px;
-  min-width: 170px;
-  text-overflow: ellipsis;
-  z-index: $z-index-bottom;
+  font-size: 16px;
+  height: 50px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  margin-inline-end: 2px;
+  margin-inline-start: 8px;
+  outline: none;
+  padding-inline-start: 0;
+  padding-inline-end: 35px;
+  width: 80%;
 
   &:focus {
     outline: none;
   }
 }
 
-.mq-dropdown-menu {
-  z-index: $z-index-high !important;
+.geoapify-autocomplete-items {
+  z-index: $z-index-high;
 }
 
-.mq-input-icon {
-  right: 0;
+.geoapify-close-button {
+  inset-inline-end: 5px;
+  right: unset;
+}
+
+.geoapify-close-button.visible {
+    display: inline-flex;
 }
 
 #location-submit {
