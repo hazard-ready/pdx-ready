@@ -399,7 +399,7 @@ $(document).ready(function () {
         }
       })
       .catch(function (error) {
-        console.log("Geocoding error: ", ${error});
+        console.log("Geocoding error: ", error.message);
         showGeocodeError();
       });
   });
