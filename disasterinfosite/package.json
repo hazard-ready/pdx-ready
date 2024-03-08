@@ -32,8 +32,9 @@
   },
   "dependencies": {
     "formdata-polyfill": "^4.0.10",
-    "jquery": "^3.6.0",
-    "leaflet": "^1.7.1",
+    "@geoapify/geocoder-autocomplete": "^2.0.1",
+    "jquery": "^3.6.1",
+    "leaflet": "^1.9.2",
     "slick-carousel": "^1.8.1"
   }
 }
