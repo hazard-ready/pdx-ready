@@ -39,7 +39,7 @@ if (!String.prototype.includes) {
   };
 }
 
-const GEOAPIFY_KEY = "247a436c9e9645e8982ff35c392096f5";
+const GEOAPIFY_KEY = "78ba2cb5406144f1827a7f146b94d255";
 
 const osmUrl =
   "//{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=3a70462b44dd431586870baee15607e4";
@@ -399,7 +399,7 @@ $(document).ready(function () {
         }
       })
       .catch(function (error) {
-        console.log(`Geocoding error: ${error}`);
+        console.log("Geocoding error: ", ${error});
         showGeocodeError();
       });
   });
